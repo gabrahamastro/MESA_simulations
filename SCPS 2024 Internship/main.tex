@@ -1,0 +1,39 @@
+\documentclass[a4paper, 12pt]{article}
+
+\newcommand{\projecttitle}{Testing the application of time-dependent convection in MESA simulations of massive stars}
+\newcommand{\projectauthor}{George Abraham}
+\newcommand{\projectdate}{13th September 2024}
+
+\input{preamble}
+\begin{document}
+\maketitle
+
+\input{Abstract}
+
+\begin{multicols}{2}
+
+%\printunsrtglossary[type={symbols,abbreviations},style=long,title={Symbols and Acronyms}]
+
+%\printglossary[type=terms, title={Terms}]
+
+% \printglossary[type=acronyms, title={Acronyms}]
+\newpage
+\input{Introduction}
+\input{Background}
+\input{Data}
+\input{Results - Method}
+\input{Discussion}
+\input{Conclusion}
+\input{Acknowledgements}
+\bibliography{sample}
+
+\appendix
+\appendixpage
+
+\section{Glossary}
+\printglossary[title={Terms},type=main]
+\printglossary[type=\acronymtype, title={Acronyms}]
+\printglossary[type=symbols, title={Symbols}]
+
+\end{multicols}
+\end{document}

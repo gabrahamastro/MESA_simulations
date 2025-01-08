@@ -1,0 +1,35 @@
+\subsection{Mixing Length Theory}\label{sec: MLT_Background}
+%note that throughout the use of "Cox" to describe Mixing Length Theory and "TDC" to describe time-dependent convection.
+%remove repeated explinations
+%log(time left) = log(time left from core collapse), where core collapse is approximated as the last model
+
+\gls{MLT} approximates convection within eddies (convective elements) by describing this non-local process by a set of local variables, namely opacity (\gls{kappa}), density (\gls{rho}), acceleration due to gravity (\gls{g}), pressure (\gls{P}), temperature (\gls{T}), specific heat at constant pressure (\gls{cp}) and energy generation rate, to name a few. These are averaged over the mixing length, \gls{l}, assumed to be of order pressure scale height, \gls{Hp} \citep{Weiss04}.
+
+From these values, it aims to determine a set of temperature gradients (with respect to pressure) to calculate whether a region is convectively unstable. These include the gradient of the surroundings, \gls{Nabla}, that of an eddy, \gls{Nabla'} and that of matter moving adiabatically, \gls{NablaAd}. These are coupled with \gls{NablaR}, the average temperature gradient needed for movement of energy via radiation (with convection suppressed) and \gls{NablaMu}, the gradient of molecular weight within an eddy. \citep{Weiss04,Anders23}. 
+
+To do so, \gls{MLT} uses a number of assumptions, namely that hydrostatic equilibrium is maintained (ensuring \gls{DynamicTimescale}$>$\gls{EddyLife}, the eddy lifetime), turbulent pressure is neglected, convective velocities, \gls{ConvVel}, are kept below the local sound speed, \gls{SoundSpeed} and pressure equilibrium is maintained (the anelastic approximation).
+
+This theory combines to give a value for convective efficiency, \gls{Gamma}, indicating whether a point is radiative ($\gls{Gamma} \rightarrow 0$) or convective ($\gls{Gamma} \rightarrow \infty$) through using the equation
+
+\begin{equation}
+    \frac{\gls{Gamma}}{1-\gls{eta}}=\frac{\gls{Nabla}-\gls{Nabla'}}{\gls{Nabla'}-\gls{NablaAd}}.
+\end{equation}
+
+Determining whether an element is convectively unstable is then determined using either the Leudox criterion,
+\begin{equation}
+    \gls{Nabla}<\gls{Nabla'}+\frac{\phi}{\delta}\gls{NablaMu},
+\end{equation}
+where $\phi/\delta = 1$ if the gas is ideal (as approximately true in a plasma) or the Schwarzchild criterion (used throughout this report),
+\begin{equation}
+    \gls{Nabla}<\gls{Nabla'}.
+\end{equation}
+The Ledoux criterion accounts for chemical inhomogeneity within a star, whilst the Schwarzchild criterion assumes the star to be chemically homogeneous \citep{Weiss04,Steinkirch12,Jermyn23}.
+
+Using theory described, a way of expressing \gls{ConvVel} in terms of calculable variables can be derived, leading to the equation
+
+\begin{equation}
+    \gls{ConvVel}^2=\gls{g} \gls{NablaAd}\frac{\gls{cp}\gls{rho} \gls{T}}{\gls{P}} \left(\gls{Nabla} -\gls{Nabla'}\right)\frac{\gls{l}^2}{8\gls{Hp}},
+    \label{eq:ManualVelocityCalc}
+\end{equation}
+
+where it can be assumed $\gls{Nabla'}\sim \gls{NablaAd}$ \citep{Maeder09}.

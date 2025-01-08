@@ -1,0 +1,57 @@
+\usepackage{graphicx}
+\graphicspath{ {Figures/} } %where figures are stored
+\usepackage{caption}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+
+\usepackage{multicol} %multiple columns
+
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+\usepackage{xurl}
+
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage[a4paper, total={17cm,26cm}]{geometry}
+
+\usepackage{float}
+\restylefloat{figure}
+\usepackage{subcaption}%subfigures
+
+\usepackage[colorlinks, urlcolor=blue, citecolor=blue, linkcolor=blue, pdftitle={\projecttitle}, pdfauthor={\projectauthor}]{hyperref}
+
+
+%Restyling the table and figure name format to make bold
+\captionsetup[table]{labelfont={bf},labelformat={default}}
+\captionsetup[figure]{labelfont={bf},labelformat={default}}
+
+% Bibliography
+\usepackage[round]{natbib} 
+\bibliographystyle{aa}
+\renewcommand{\bibsection}{\section*{References}}
+\newcommand{\privcomcite}[1]{\citeauthor{#1} (\citeyear{#1}; priv.\ comm.)} %cite private communications
+
+\usepackage[acronym]{glossaries}
+%\makenoidxglossaries
+\newglossary{symbols}{sym}{syb}{List of Symbols}
+%\newglossary{terms}{ter}{ter}{List of Terms}
+%\newglossary{acronyms}{acr}{acr}{List of Acronyms}
+
+\input{Terms}
+\input{glossary}
+\input{abbrvs}
+
+\makeglossaries
+
+\title{\projecttitle}
+\author{\projectauthor}
+\date{\projectdate}

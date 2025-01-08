@@ -1,0 +1,11 @@
+\maketitle
+\begin{abstract}
+This report focuses on the treatment of time-dependent convection (TDC) in version \texttt{r24.03.1} of \texttt{MESA}. $20M_{\odot}$ models were run to find any common differences between the treatment of Cox's mixing length theory (MLT) compared to TDC, to thereby ascertain whether using TDC produces more physically accurate results. 
+
+Parameters were updated in groups, allowing separation of effects caused by the mixing theory from those of resolution and metallicity, models run on the Lupus server at Keele University and data plotted using \texttt{Python} packages such as \texttt{mesaPlot}.
+
+It was found that changes in mixing theory likely explained differences in central convective velocity treatment and smoothness of convective velocities after an expansion at $\sim 10\mathrm{yr}$ before core collapse. Other effects, including the expansion itself, surface oscillations, He-entrainment during Si-burning and differences in surface and core parameters can be explained by other means (namely metallicity and model resolution).
+
+Qualitatively, it appears TDC and MLT in \texttt{MESA} produce broadly similar results. However, further investigation, changing few parameters at a time and comparing TDC treatment in \texttt{MESA} to 3D models, is needed to show whether this treatment gives results closer to reality.
+
+\end{abstract}

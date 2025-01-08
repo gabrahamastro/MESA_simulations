@@ -1,0 +1,29 @@
+\section{Method}\label{sec:Method}
+For each simulation, inlist parameters were edited using the $\texttt{Fortran}$ language, updating the default test suite values to emulate those used by \privcomcite{Whitehead} in version $\texttt{r10398}$. Here, difficulties were found with the difference in syntax between the two versions and how the test suite used here utilises multiple inlists (changing parameters at different stellar evolutionary stages). 
+
+Throughout, the approach was to update parameters and find the effect of this using \gls{MLT} and \gls{TDC} (comparing the outcomes). Parameters were grouped into the categories: mixing, metallicity, timestepping and miscellaneous parameters, edited in these groups from the default to either that used by \citeauthor{Whitehead} or the recommended value for a production run within the test suite (if the parameter did not exist in version $\texttt{r10398}$). 
+
+This method, whilst enabling analysis of a range of observable effects would, however, have benefited from changing only a few parameters at a time to increase confidence as to their causes (not possible here due to time constrains).
+
+Meanwhile, a number of values remained constant, notably including the mass ($20M_{\odot}$) and convection theorem (Schwarzchild; see Section \ref{sec: MLT_Background}).
+
+\subsection{Data Analysis}
+
+To analyse the simulations, profiles (taken every 10 models, storing detailed location-dependent data) and history files (providing more generalised information for each model) were processed using a number of $\texttt{Python}$ libraries, namely $\texttt{mesaPlot}$ (for plotting isotopic abundances and Kippenhahn diagrams), $\texttt{mesa\_reader}$ (for reading profile and history files) and $\texttt{mesa\_EDDY}$ (to plot more detailed Kippenhahn diagrams).
+
+Plotting isotopic abundances over mass at different points allowed analysis of shell mergers (affected by the style of convection) whilst \glspl{HRD} gave an understanding of effects experienced on the stellar surface and graphs of $\gls{Tc}$ by $\gls{rhoc}$ showed those at the core (see Section \ref{sec:AdvancedEvolution}).
+
+\subsection{Limitations}
+
+Due to the nature of 1D stellar models, it is often difficult to discern whether an observed effect has physical meaning, is numerical, or a mixture of both. Therefore, a range of other parameters were plotted, such as surface radius over time and temperature over radius, to thereby aid in understanding results at different points during a model. 
+
+This is also the stimulus for running models with small parameter changes, providing an indication of whether the cause of an effect is the change in a physical parameter (e.g. metallicity) or something numerical (e.g. timestepping).
+
+%note "Coarse" = test run resolution (long timestepping), "Fine" = high resolution (short timestepping)
+%note "Cox" refers to MLT
+
+%ensure to refer to equation below - calculation of convective velocity used in Figure \ref{fig:MachMass_EarlySiBurn}
+
+
+%explain all parts of the equation!
+%consider migrating the equation to the background section

@@ -1,0 +1,17 @@
+\subsection{Central Velocity}
+
+Throughout, though most obvious during H-burning, Mach number (\gls{Mach}) and \gls{ConvVel} modelled using \gls{MLT} increases steeply toward the centre, whilst those modelled using \gls{TDC} and those calculated using Equation \ref{eq:ManualVelocityCalc} (for both \gls{MLT} and \gls{TDC}) tend to zero (see Figure \ref{fig:MachMass_HBurn}).
+
+This is surprising, since at such an early stage it is expected that, since timescales are long, $\texttt{MESA}$ will approximate \gls{TDC} as \gls{MLT}, meaning both values given for \gls{Mach} and \gls{ConvVel} would be equal (see Section \ref{sec:TDC}). 
+
+This effect is likely caused by the differing treatment of conditions at the core: a difficult location to model in a 1D scenario. 
+
+Notably, in a 3D model from \citet{Georgy24} \gls{ConvVel} values during Ne-burning appear to increase  toward the core (as implied by modelled \gls{MLT} values), though the overall profile shape should increase from a low, as predicted by \gls{TDC} and \gls{MLT} calculated with Equation \ref{eq:ManualVelocityCalc}.
+
+The difference in treatment between values of \gls{ConvVel} and \gls{Mach} calculated and given by $\texttt{MESA}$ is further highlighted in Figure \ref{fig:MachMass_LateSiBurn}. Here, values calculated by $\texttt{MESA}$ appear to be a factor larger than those found using Equation \ref{eq:ManualVelocityCalc} for both mixing theories. 
+
+This finding indicates Equation \ref{eq:ManualVelocityCalc} doesn't treat the envelope in the same way as by $\texttt{MESA}$, whilst showing envelope convection is treated similarly by both mixing theories. 
+
+That said, values for \gls{TDC} and \gls{MLT} calculated by \texttt{MESA} are nearly equal in Figure \ref{fig:MachMass_LateSiBurn}, indicating treatment of \gls{ConvVel} is still similar, even at short timescales.
+
+\input{FigCode/MachMass_EarlySiBurn}

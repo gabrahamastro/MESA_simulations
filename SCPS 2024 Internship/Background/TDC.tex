@@ -1,0 +1,36 @@
+\subsection{Time Dependent Convection}\label{sec:TDC}
+\gls{MLT} does have pitfalls though, namely that when $\gls{EddyLife} \ge \gls{NuclearTimescale}$, the nuclear timescale (as during and after O-burning) accuracy reduces. Also, it doesn't accurately model overshooting or undershooting of convective layers, nor is the growth and decay of convection accounted for.
+
+To improve, time-dependence is added in the form of approximations using fluid equations, namely the Euler equation. Here, we assume free convection, where matter is incompressible (invalid for $\gls{ConvVel} \rightarrow \gls{SoundSpeed}$).
+
+However, this is a 3D problem and therefore many assumptions are needed to model this in 1D, namely that $\gls{ConvVel}\ll \gls{SoundSpeed}$, microscopic viscosity is neglected and temperature fluctuations are coupled with turbulent velocity (requiring timescales for convection, $\tau > \gls{DynamicTimescale}$; \citealp{Weiss04}). 
+
+These assumptions lead to the equation for convective velocity 
+
+\begin{equation}
+\gls{ConvVel}^2=\frac{1}{6 \xi_2^2}\left(J \tan \gls{l} \frac{\gls{Hp}+\gls{deltat} J}{4} +\xi_1\right)^2,
+\label{eq:TDCVel}
+\end{equation}
+
+where 
+\begin{equation}
+    J^2=\xi_1^2-4\xi_0\xi_2,
+\end{equation}
+
+\begin{equation}
+    \xi_0=\frac{\gls{alpha}}{\gls{l}\sqrt{6}} \gls{cp}\gls{T}\gls{NablaAd}\left(\gls{Nabla} - \gls{NablaAd}\right),
+\end{equation}
+
+\begin{equation}
+    \xi_1=\frac{4\gls{sigma} \gls{T}^3}{\gls{rho}^2 \gls{cp} \gls{kappa}}\left(\frac{2\gls{alphar} \sqrt{3}}{\gls{alpha} \gls{l}}\right)^2 +\frac{2}{3}\gls{alphaPt}\gls{rho}\frac{d\gls{rho}^{-1}}{d \gls{t}},
+\end{equation}
+and
+\begin{equation}
+    \xi_2=-\left(\frac{8}{3}\sqrt{\frac{2}{3}}\right)\frac{\gls{alphaD}}{\gls{alpha} \gls{l}}.
+\end{equation}
+
+Note here that, to ensure convection occurs, it is assumed that $J>0$ and $J^2>0$, whilst the convective flux parameters are usually treated using the default values: $\gls{alphar}=0$, $\gls{alpha} = 2$, $\gls{alphaD} = 1$ and $\gls{alphaPt}=0$. Also note that \gls{sigma} is the Stefan-Boltzmann constant and \gls{deltat} is a timestep \citep{Jermyn23}.
+
+In \texttt{MESA r24.03.1}, \citet{Jermyn23} approximates this approach, calculating those solutions of physical interest from solutions to the stellar equations using \gls{TDC} theory, whilst letting the solutions tend to those of \gls{MLT} at long timescales (as the theory predicts). 
+
+Some physical effects are difficult to recreate in 1D, such oscillations during the (super-) asymptotic giant branch. Here, the instability caused by thermal pulses as a result of an He-shell flash is poorly constrained, meaning convection and mass-loss are poorly understood, thereby making the 1D model difficult to converge \citep{Rees24}. 
