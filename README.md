@@ -1,4 +1,4 @@
-# MESA_simulations
+# Keele University Summer Internship 2024
 
 ## Introduction
 For an internship at Keele University during Summer 2024, I was given the opportunity to use [MESA](https://docs.mesastar.org/) to simulate the evolution of 20 solar mass stars. The purpose was to investigate the effects of changing the convection theorem used (time-independent compared to time-dependent convection) in 1D using mixing length theory.
